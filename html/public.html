@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Bootstrap Fixed Layout Example</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+<<link rel="stylesheet" href="../css/style.css">
+
+
+
+<style>
+.survey_col
+{
+    min-height: 100px;
+}
+
+</style>
+</head>
+<body>
+    <div class="m-4">
+        <nav class="navbar navbar-expand-md navbar-light bg-light" style="border-bottom: 1px solid #d6d6d7;">
+            <div class="container-fluid" style="font-size: large;">
+                <a href="#" class="navbar-brand">
+                    <img src="../images/logo.png" height="35" alt="CoolBrand">
+                    <span style="color: blue;">Your</span>
+                    <span style="color: orange;">Opinion</span>
+                </a>
+                <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarCollapse">
+                    <div class="navbar-nav">
+                        <a href="main.html" class="nav-item nav-link">Home</a>
+                        <a href="#" class="nav-item nav-link ">Public</a>
+                        <a href="about.html" class="nav-item nav-link">About</a>
+                    </div>
+                    <div class="navbar-nav ms-auto">
+                        <a href="login.html" class="btn btn-light me-2 mb-2" style="border-color: #000000;">Login</a>
+                        <a href="SingUP.html" class="btn btn-primary me-2 mb-2" >Register</a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </div>
+
+<div class="m-4">
+    <div class="col-md-2" style="padding-left: 40px; font-size: xx-large; font-weight: bold;">
+        Public surveys 
+    </div>
+    <div class="row justify-content-end align-items-center" style=" padding-top: 15px">
+        <div class="col-auto">
+            <button type="button" class="btn btn-secondary">
+                <i class="bi bi-funnel"></i>
+            </button>
+        </div>
+        <div class="col-md-3" style="padding-top: 5px;">
+            <div class="input-group">
+                <input type="text" class="form-control" placeholder="Search...">
+                <button type="button" class="btn btn-secondary">
+                    <i class="bi-search"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<div class="container-fluid px-5">
+    <div class="row">
+        <a href="#" style="text-decoration: none; color: inherit;">
+            <div class="col-12 survey_col d-flex flex-column justify-content-center align-items-center background-image"
+            style="background-image: url(../images/upPicture.png);
+        background-repeat: no-repeat; background-position: center; background-size: cover;">
+            <div class="text-center"><h4>Name</h4></div>
+            <div class="mt-auto d-flex justify-content-between w-100">
+                <div class="text-secondary">2 finished</div>
+                <div class="text-secondary">12/03/2024</div>
+            </div>
+        </div>
+        </a>
+
+        <a href="#" style="text-decoration: none; color: inherit;">
+            <div class="col-12 survey_col d-flex flex-column justify-content-center align-items-center">
+                <div class="text-center"><h4>Name</h4></div>
+                <div class="mt-auto d-flex justify-content-between w-100">
+                    <div class="text-secondary">2 finished</div>
+                    <div class="text-secondary">12/03/2024</div>
+                </div>
+            </div>
+        </a>
+</div>
+</body>
+</html> 

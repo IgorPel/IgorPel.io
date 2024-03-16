@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:400,700">
+    <title>Bootstrap Simple Login Form with Blue Background</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script> 
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="../css/style.css">
+
+    
+    <style>
+.survey_col
+{
+    min-height: 100px;
+}
+
+
+.ui-w-100 {
+    width: 100px !important;
+    height: auto;
+}
+
+.card {
+    background-clip: padding-box;
+    box-shadow: 0 1px 4px rgba(24,28,33,0.012);
+}
+
+.user-view-table td:first-child {
+    width: 9rem;
+}
+.user-view-table td {
+    padding-right: 0;
+    padding-left: 0;
+    border: 0;
+}
+
+.text-light {
+    color: #babbbc !important;
+}
+
+.card .row-bordered>[class*=" col-"]::after {
+    border-color: rgba(24,28,33,0.075);
+}    
+
+.text-xlarge {
+    font-size: 170% !important;
+}
+</style>
+</head>
+<body>
+    <div class="m-4">
+        <nav class="navbar navbar-expand-md navbar-light bg-light" style="border-bottom: 1px solid #d6d6d7;">
+            <div class="container-fluid" style="font-size: large;">
+                <a href="#" class="navbar-brand">
+                    <a href="https://www.youtube.com/watch?v=8fIu6zkMg2U" style="text-decoration: none; color: inherit; margin-right: 5px;">
+                        <img src="../images/logo.png" height="35" alt="CoolBrand">
+                    </a>
+                    <span style="color: blue;">Your</span>
+                    <span style="color: orange;">Opinion</span>
+                </a>
+                <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarCollapse">
+                    <div class="navbar-nav">
+                        <a href="main.html" class="nav-item nav-link">Home</a>
+                        <a href="#" class="nav-item nav-link ">Public</a>
+                        <a href="about.html" class="nav-item nav-link">About</a>
+                    </div>
+                    <div class="navbar-nav ms-auto">
+                        <button type="button" class="btn btn-secondary me-2">
+                            <i class="bi bi-bell-fill"></i>
+                        </button>
+                        <a href="profile.html">
+                            <img src="../images/user-account-flat-icon-vector-14992789.jpg" height="45" width="45" alt="avatar"
+                            class="rounded-circle" style="object-fit: fill; overflow: hidden;">
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </div>
+    
+    <div class="container">
+            <div class="row">
+              <div class="col mb-3">
+                <div class="card">
+                  <div class="card-body">
+                    <div class="e-profile">
+                      <div class="row justify-content-between">
+                        <div class="col-12 col-sm-auto mb-3">
+                            <div class="e-profile d-flex justify-content-center">
+                                <img src="../images/user-account-flat-icon-vector-14992789.jpg" alt="avatar" class="rounded-circle" 
+                                style="height: 220px; width: 220px; object-fit:fill; overflow: hidden;">
+                            </div>
+                        </div>
+                        <div class="col d-flex flex-column flex-sm-row mb-3 align-items-center">
+                          <div class="text-center text-sm-left mb-2 mb-sm-0">
+                            <h4 class="pt-sm-2 pb-1 mb-0 text-nowrap">Nickname</h4>
+                            <p class="mb-0">@tagname</p>
+                            <div class="text-muted"><strong>Status: </strong><small>active</small></div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="card-header">
+                        <ul class="nav nav-tabs card-header-tabs" id="MyTab">
+                            <li class="nav-item">
+                                <a href="#main" class="nav-link active" data-bs-toggle="tab">Main</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="#about" class="nav-link" data-bs-toggle="tab">About me</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="#mine" class="nav-link" data-bs-toggle="tab">My survey</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="#completed" class="nav-link" data-bs-toggle="tab">Completed</a>
+                            </li>
+                        </ul>
+                      </div>
+                      <div class="card-body">
+                          <div class="tab-content pt-3">
+                            <div class="tab-pane active" id="main">
+                                <div class="row justify-content-end">
+                                    <div class="col-auto">
+                                        <button type="button" class="btn btn-secondary">
+                                             <i class="bi bi-pencil-square"></i>
+                                         </button>
+                                    </div>
+                                </div>
+                              <form class="form">
+                                <div class="row">
+                                  <div class="col">
+                                    <div class="row">
+                                      <div class="col-md-6">
+                                        <h6 class="mt-4 mb-3">General</h6>
+                                        <table class="table user-view-table m-0">
+                                            <tbody>
+                                              <tr>
+                                                <td>Nickname:</td>
+                                                <td>nickname</td>
+                                              </tr>
+                                              <tr>
+                                                <td>Name:</td>
+                                                <td>Name </td>
+                                              </tr>
+                                              <tr>
+                                                <td>Surname:</td>
+                                                <td>Surname </td>
+                                              </tr>
+                                              <tr>
+                                                <td>E-mail:</td>
+                                                <td>example@gmail.com</td>
+                                              </tr>
+                                            </tbody>
+                                          </table>
+                                      </div>
+                                      <div class="col-md-6">
+
+                                        <h6 class="mt-4 mb-3">Personal info</h6>
+                                        <table class="table user-view-table m-0">
+                                        <tbody>
+                                            <tr>
+                                            <td>Birthday:</td>
+                                            <td>Month Day, Year</td>
+                                            </tr>
+                                            <tr>
+                                            <td>Country:</td>
+                                            <td>country</td>
+                                            </tr>
+                                            <tr>
+                                            <td>Languages:</td>
+                                            <td>language</td>
+                                            </tr>
+                                        </tbody>
+                                        </table>
+                                      </div>
+                                    </div>
+                                    <div class="row">
+                                      <div class="col">
+                                        <h6 class="mt-4 mb-3">Contacts</h6>
+                                        <table class="table user-view-ta%ble m-0">
+                                          <tbody>
+                                            <tr>
+                                              <td>Phone:</td>
+                                              <td>+-</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Discord:</td>
+                                                <td>-</td>
+                                            </tr>
+                                          </tbody>
+                                        </table>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </form>
+                            </div>
+                            <div class="tab-pane" id="about">
+                                <div class="row align-items-center">
+                                    <div class="col">
+                                        <h3>About me</h3>
+                                    </div>
+                                    <div class="col-auto">
+                                        <div class="input-group justify-content-end">
+                                            <button type="button" class="btn btn-secondary">
+                                                <i class="bi bi-pencil-square"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col">
+                                        <p>text</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tab-pane" id="mine">
+                                <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+                                    <span class="navbar-toggler-icon"></span>
+                                </button>
+                                <div class="row align-items-center">
+                                    <div class="col">
+                                        <h3>My survey</h3>
+                                    </div>
+                                    <div class="col-auto">
+                                        <button type="button" class="btn btn-primary">
+                                            <i class="bi bi-gear-fill"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="row justify-content-end">
+                                    <div class="col-lg-3">
+                                        <div class="input-group">
+                                            <input type="text" class="form-control" placeholder="Search...">
+                                            <button type="button" class="btn btn-secondary">
+                                                <i class="bi-search"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="row">
+                                    <a href="#" style="text-decoration: none; color: inherit;">
+                                        <div class="col-12 survey_col d-flex flex-column justify-content-center align-items-center background-image"
+                                        style="background-image: url(images/upPicture.png);
+                                    background-repeat: no-repeat; background-position: center; background-size: cover;">
+                                        <div class="text-center"><h4>Name</h4></div>
+                                        <div class="mt-auto d-flex justify-content-between w-100">
+                                            <div class="text-secondary">2 finished</div>
+                                            <div class="text-secondary">12/03/2024</div>
+                                        </div>
+                                    </div>
+                                    </a>
+
+                                    <a href="#" style="text-decoration: none; color: inherit;">
+                                        <div class="col-12 survey_col d-flex flex-column justify-content-center align-items-center">
+                                            <div class="text-center"><h4>Name</h4></div>
+                                            <div class="mt-auto d-flex justify-content-between w-100">
+                                                <div class="text-secondary">2 finished</div>
+                                                <div class="text-secondary">12/03/2024</div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                                <nav>
+                                    <ul class="pagination justify-content-end mt-4">
+                                        <!--В майбутньому зроблю функцію, яка буде змінювати вміст рядка, що зверху-->
+                                        <li class="page-item"><a href="#" class="page-link">Previous</a></li>
+                                        <li class="page-item"><a href="#" class="page-link">1</a></li>
+                                        <li class="page-item"><a href="#" class="page-link">Next</a></li>
+                                    </ul>
+                                </nav>
+                            </div>
+
+                            <div class="tab-pane" id="completed">
+                                <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+                                    <span class="navbar-toggler-icon"></span>
+                                </button>
+                                <div class="row align-items-center">
+                                    <div class="col">
+                                        <h3>Completed</h3>
+                                    </div>
+                                    <div class="col-auto">
+                                        <button type="button" class="btn btn-primary">
+                                            <i class="bi bi-gear-fill"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="row justify-content-end">
+                                    <div class="col-lg-3">
+                                        <div class="input-group">
+                                            <input type="text" class="form-control" placeholder="Search...">
+                                            <button type="button" class="btn btn-secondary">
+                                                <i class="bi-search"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="row">
+                                    <a href="#" style="text-decoration: none; color: inherit;">
+                                        <div class="col-12 survey_col d-flex flex-column justify-content-center align-items-center background-image"
+                                        style="background-image: url(images/upPicture.png);
+                                    background-repeat: no-repeat; background-position: center; background-size: cover;">
+                                        <div class="text-center"><h4>Name</h4></div>
+                                        <div class="mt-auto d-flex justify-content-between w-100">
+                                            <div class="text-secondary">2 finished</div>
+                                            <div class="text-secondary">12/03/2024</div>
+                                        </div>
+                                    </div>
+                                    </a>
+                                    <a href="#" style="text-decoration: none; color: inherit;">
+                                        <div class="col-12 survey_col d-flex flex-column justify-content-center align-items-center">
+                                            <div class="text-center"><h4>Name</h4></div>
+                                            <div class="mt-auto d-flex justify-content-between w-100">
+                                                <div class="text-secondary">2 finished</div>
+                                                <div class="text-secondary">12/03/2024</div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                                <nav>
+                                    <ul class="pagination justify-content-end mt-4">
+                                        <!--В майбутньому зроблю функцію, яка буде змінювати вміст рядка, що зверху-->
+                                        <li class="page-item"><a href="#" class="page-link">Previous</a></li>
+                                        <li class="page-item"><a href="#" class="page-link">1</a></li>
+                                        <li class="page-item"><a href="#" class="page-link">Next</a></li>
+                                    </ul>
+                                </nav>
+                            </div>
+                          </div>    
+                      </div>
+                    </div>
+                  </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>

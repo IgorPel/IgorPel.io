@@ -1,0 +1,644 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Bootstrap Fixed Layout Example</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+<link rel="stylesheet" href="../css/style.css">
+
+<style>
+
+
+    
+  
+   
+    .section
+    {
+        border: 1px solid #dadce0;
+        border-radius: 10px;
+        margin-bottom: 15px;
+        background-color: #f8f8f8;
+        padding: 25px;
+        margin-top: 50px;
+    }
+
+    .section:hover
+    {
+        background: linear-gradient(to right, blueviolet 0.5%, transparent 0%); 
+        background-color: #f8f8f8;;
+    }
+
+</style>
+</head>
+<body>
+    <div class="m-4">
+        <nav class="navbar navbar-expand-md navbar-light bg-light" style="border-bottom: 1px solid #d6d6d7;">
+            <div class="container-fluid" style="font-size: large;">
+                <a href="#" class="navbar-brand">
+                    <img src="../images/logo.png" height="35" alt="CoolBrand">
+                    <span style="color: blue;">Your</span>
+                    <span style="color: orange;">Opinion</span>
+                </a>
+                <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarCollapse">
+                    <div class="navbar-nav">
+                        <a href="main.html" class="nav-item nav-link">Home</a>
+                        <a href="#" class="nav-item nav-link ">Public</a>
+                        <a href="about.html" class="nav-item nav-link">About</a>
+                    </div>
+                    <div class="navbar-nav ms-auto">
+                        <a href="login.html" class="btn btn-light me-2 mb-2" style="border-color: #000000;">Login</a>
+                        <a href="SingUP.html" class="btn btn-primary me-2 mb-2" >Register</a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </div>
+
+    
+    
+    
+    <div class="container-md">
+        <div class="justify-content-end d-flex" style="padding-top: 50px; width: 100%;">
+            <button type="button" class="btn btn-secondary">
+                <i class="bi bi-gear"></i>
+            </button>
+        </div>
+        <div class="div-class section" style=" border-top: 5px solid darkturquoise;">           
+            <div class="row">
+                <div class="col-12">
+                    <div class="input-group">
+                        <textarea style="font-size: 24px; font-weight: bold;" class="form-control" >Name</textarea>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="row mt-2">
+                <div class="col-12">
+                    <div class="input-group">
+                        <textarea type="text" class="form-control text-dark mt-3">description (optional)</textarea>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="div-class section">
+            <div class="align-items-center text-center">
+                <button type="button" class="btn btn-light">
+                    <i class="bi bi-arrow-down-up"></i>
+                </button>
+            </div>
+            <div class="row mt-1">
+                <div class="col-12">
+                    <div class="input-group">
+                        <textarea style="font-size: 24px; font-weight: bold;" class="form-control" >Question</textarea>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="row mt-2">
+                <div class="col-12">
+                    <div class="input-group">
+                        <textarea type="text" class="form-control text-dark mt-3">description (optional)</textarea>
+                    </div>
+                </div>
+            </div>
+            
+            
+            <div class="row d-flex align-items-center mt-5">
+                    <div class="col-auto">
+                        <div class="form-check">
+                          <input class="form-check-input" type="radio" disabled>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <input type="text" class="form-control w-100" placeholder="option 0">
+                    </div>
+                    <div class="col-auto">
+                        <button type="button" class="btn btn-secondary">
+                            <i class="bi bi-card-image"></i>
+                        </button>
+                        <button type="button" class="btn btn-danger ms-2">
+                        <i class="bi bi-x"></i>
+                        </button>
+                    </div>
+            </div>
+
+            <div class="row d-flex align-items-center mt-5">
+                <div class="col-auto">
+                    <div class="form-check">
+                      <input class="form-check-input" type="radio" disabled>
+                    </div>
+                </div>
+                <div class="col">
+                    <input type="text" class="form-control w-100" placeholder="option 1">
+                </div>
+                <div class="col-auto">
+                    <button type="button" class="btn btn-secondary">
+                        <i class="bi bi-card-image"></i>
+                    </button>
+                    <button type="button" class="btn btn-danger ms-2">
+                    <i class="bi bi-x"></i>
+                    </button>
+                </div>
+            </div>
+
+            <div class="row d-flex align-items-center mt-5">
+                <div class="col-auto">
+                    <div class="form-check">
+                      <input class="form-check-input" type="radio" disabled>
+                    </div>
+                </div>
+                <div class="col">
+                    <input type="text" class="form-control w-100" placeholder="option 2">
+                </div>
+                <div class="col-auto">
+                    <button type="button" class="btn btn-secondary">
+                        <i class="bi bi-card-image"></i>
+                    </button>
+                    <button type="button" class="btn btn-danger ms-2">
+                    <i class="bi bi-x"></i>
+                    </button>
+                </div>
+            </div>
+
+            <div class="d-flex align-items-center mt-5">
+
+                <input type="text" class="form-control mx-2" style="width: auto; min-width: 100%;" placeholder="add option">
+            
+            </div>
+              
+
+            <div class="justify-content-end d-flex mt-4 align-items-center" style="border-top: 0.5px solid #dadce0;">
+                <button type="button" class="btn btn-danger mt-1">
+                    <i class="bi bi-trash"></i>
+                </button>
+                <div class="form-check form-switch mt-1 ms-3" style="font-size: 20px;">
+                    <input class="form-check-input" type="checkbox">
+                    <label class="form-check-label" for="switchDefault">mandatory</label>
+                </div>
+                <button type="button mt-1 ms-3" class="btn btn-light">
+                    <i class="bi bi-three-dots-vertical"></i>
+                </button>
+            </div>
+        </div>
+
+        <div class="div-class section">
+            <div class="align-items-center text-center">
+                <button type="button" class="btn btn-light">
+                    <i class="bi bi-arrow-down-up"></i>
+                </button>
+            </div>
+
+            <div class="row mt-1">
+                <div class="col-12">
+                    <div class="input-group">
+                        <textarea style="font-size: 24px; font-weight: bold;" class="form-control" >Question</textarea>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="row mt-2">
+                <div class="col-12">
+                    <div class="input-group">
+                        <textarea type="text" class="form-control text-dark mt-3">description (optional)</textarea>
+                    </div>
+                </div>
+            </div>
+            
+            
+            <div class="row d-flex align-items-center mt-5">
+                <div class="col-auto">
+                    <div class="form-check">
+                      <input class="form-check-input" type="checkbox" disabled>
+                    </div>
+                </div>
+                <div class="col">
+                    <input type="text" class="form-control" placeholder="option 0">
+                </div>
+                <div class="col-auto">
+
+                    <button type="button" class="btn btn-secondary">
+                        <i class="bi bi-card-image"></i>
+                    </button>
+                    
+                    <button type="button" class="btn btn-danger ms-2">
+                    <i class="bi bi-x"></i>
+                    </button>
+                </div>
+            </div>
+
+            <div class="row d-flex align-items-center mt-5">
+                <div class="col-auto">
+                    <div class="form-check">
+                      <input class="form-check-input" type="checkbox" disabled>
+                    </div>
+                </div>
+                <div class="col">
+                    <input type="text" class="form-control" placeholder="option 1">
+                </div>
+                <div class="col-auto">
+
+                    <button type="button" class="btn btn-secondary">
+                        <i class="bi bi-card-image"></i>
+                    </button>
+                    
+                    <button type="button" class="btn btn-danger ms-2">
+                    <i class="bi bi-x"></i>
+                    </button>
+                </div>
+            </div>
+
+            <div class="row d-flex align-items-center mt-5">
+                <div class="col-auto">
+                    <div class="form-check">
+                      <input class="form-check-input" type="checkbox" disabled>
+                    </div>
+                </div>
+                <div class="col">
+                    <input type="text" class="form-control" placeholder="option 2">
+                </div>
+                <div class="col-auto">
+
+                    <button type="button" class="btn btn-secondary">
+                        <i class="bi bi-card-image"></i>
+                    </button>
+                    
+                    <button type="button" class="btn btn-danger ms-2">
+                    <i class="bi bi-x"></i>
+                    </button>
+                </div>
+            </div>
+
+            <div class="d-flex align-items-center mt-5">
+
+                <input type="text" class="form-control mx-2" style="width: auto; min-width: 100%;" placeholder="add option">
+            
+            </div>
+
+            <div class="justify-content-end d-flex mt-4 align-items-center" style="border-top: 0.5px solid #dadce0;">
+                <button type="button" class="btn btn-danger mt-1">
+                    <i class="bi bi-trash"></i>
+                </button>
+                <div class="form-check form-switch mt-1 ms-3" style="font-size: 20px;">
+                    <input class="form-check-input" type="checkbox">
+                    <label class="form-check-label" for="switchDefault">mandatory</label>
+                </div>
+                <button type="button mt-1 ms-3" class="btn btn-light">
+                    <i class="bi bi-three-dots-vertical"></i>
+                </button>
+            </div>
+        </div>
+
+        <div class="div-class section">
+
+            <div class="align-items-center text-center">
+                <button type="button" class="btn btn-light">
+                    <i class="bi bi-arrow-down-up"></i>
+                </button>
+            </div>
+            <div class="row mt-1">
+                <div class="col-12">
+                    <div class="input-group">
+                        <textarea style="font-size: 24px; font-weight: bold;" class="form-control" >Question</textarea>
+                        <div class="input-group-append">
+                            <button type="button" class="btn btn-secondary ms-2">
+                                <i class="bi bi-card-image"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>       
+            <div class="row mt-2">
+                <div class="col-12">
+                    <div class="input-group">
+                        <textarea type="text" class="form-control text-dark mt-3">description (optional)</textarea>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row mt-5">
+                <div class="col-6">
+                    <div class="input-group">
+                        <input type="text" class="form-control" placeholder="minimum">
+                    </div>
+                </div>
+                <div class="col-6">
+                    <div class="input-group">
+                        <input type="text" class="form-control" placeholder="maximum">
+                    </div>
+                </div>
+            </div>
+            <div class="form-select mt-3">
+                <label for="customRange">Custom range</label>
+                <input type="range" class="form-range" id="customRange">
+            </div>
+            
+              <div class="justify-content-end d-flex mt-4 align-items-center" style="border-top: 0.5px solid #dadce0;">
+                <button type="button" class="btn btn-danger mt-1">
+                    <i class="bi bi-trash"></i>
+                </button>
+                <div class="form-check form-switch mt-1 ms-3" style="font-size: 20px;">
+                    <input class="form-check-input" type="checkbox">
+                    <label class="form-check-label" for="switchDefault">mandatory</label>
+                </div>
+                <button type="button mt-1 ms-3" class="btn btn-light">
+                    <i class="bi bi-three-dots-vertical"></i>
+                </button>
+            </div>
+        </div>
+
+        <div class="div-class section">
+
+            <div class="align-items-center text-center">
+                <button type="button" class="btn btn-light">
+                    <i class="bi bi-arrow-down-up"></i>
+                </button>
+            </div>
+            <div class="row mt-1">
+                <div class="col-12">
+                    <div class="input-group">
+                        <textarea style="font-size: 24px; font-weight: bold;" class="form-control" >Question</textarea>
+                        <div class="input-group-append">
+                            <button type="button" class="btn btn-secondary ms-2">
+                                <i class="bi bi-card-image"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row mt-2">
+                <div class="col-12">
+                    <div class="input-group">
+                        <textarea type="text" class="form-control text-dark mt-3">description (optional)</textarea>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row mt-4">
+                <div class="col-12">
+                    <div class="input-group">
+                        <textarea type="text" class="form-control text-dark mt-3" placeholder="Answer" disabled></textarea>
+                    </div>
+                </div>
+            </div>
+
+            <div class="justify-content-end d-flex mt-4 align-items-center" style="border-top: 0.5px solid #dadce0;">
+                <button type="button" class="btn btn-danger mt-1">
+                    <i class="bi bi-trash"></i>
+                </button>
+                <div class="form-check form-switch mt-1 ms-3" style="font-size: 20px;">
+                    <input class="form-check-input" type="checkbox">
+                    <label class="form-check-label" for="switchDefault">mandatory</label>
+                </div>
+                <button type="button mt-1 ms-3" class="btn btn-light">
+                    <i class="bi bi-three-dots-vertical"></i>
+                </button>
+            </div>
+        </div>
+
+        <div class="div-class section">
+
+            <div class="align-items-center text-center">
+                <button type="button" class="btn btn-light">
+                    <i class="bi bi-arrow-down-up"></i>
+                </button>
+            </div>
+            <div class="row mt-1">
+                <div class="col-12">
+                    <div class="input-group">
+                        <textarea style="font-size: 24px; font-weight: bold;" class="form-control" >Question</textarea>
+                        <div class="input-group-append">
+                            <button type="button" class="btn btn-secondary ms-2">
+                                <i class="bi bi-card-image"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row mt-2">
+                <div class="col-12">
+                    <div class="input-group">
+                        <textarea type="text" class="form-control text-dark mt-3">description (optional)</textarea>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row mt-3">
+                <div class="col-6">
+                    <div class="row d-flex align-items-center mt-5">
+                        <span style="font-size: x-large;"><strong>Rows</strong></span>
+                    </div>
+                    <div class="row d-flex align-items-center mt-5">
+                        <div class="col">
+                            <input type="text" class="form-control" placeholder="option 1">
+                        </div>
+                        <div class="col-auto">
+            
+                            <button type="button" class="btn btn-secondary">
+                                <i class="bi bi-card-image"></i>
+                            </button>
+                                
+                                <button type="button" class="btn btn-danger ms-2">
+                                <i class="bi bi-x"></i>
+                                </button>
+                            </div>
+                        </div>
+                    <div class="row d-flex align-items-center mt-5">
+                        <div class="col">
+                            <input type="text" class="form-control" placeholder="option 1">
+                        </div>
+                        <div class="col-auto">
+        
+                            <button type="button" class="btn btn-secondary">
+                                <i class="bi bi-card-image"></i>
+                            </button>
+                            
+                            <button type="button" class="btn btn-danger ms-2">
+                            <i class="bi bi-x"></i>
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div class="row d-flex align-items-center mt-5">
+                        <input type="text" class="form-control mx-2" placeholder="add option">
+                    </div>
+                </div>
+                <div class="col-6">
+                    <div class="row d-flex align-items-center mt-5">
+                        <span style="font-size: x-large;"><strong>Collumn</strong></span>
+                    </div>
+                    <div class="row d-flex align-items-center mt-5">
+                        <div class="col">
+                            <input type="text" class="form-control" placeholder="option 1">
+                        </div>
+                        <div class="col-auto">
+        
+                            <button type="button" class="btn btn-secondary">
+                                <i class="bi bi-card-image"></i>
+                            </button>
+                            
+                            <button type="button" class="btn btn-danger ms-2">
+                            <i class="bi bi-x"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="row d-flex align-items-center mt-5">
+                        <input type="text" class="form-control mx-2" placeholder="add option">
+                    </div>
+                </div>
+            </div>
+            
+            <div class="justify-content-end d-flex mt-4 align-items-center" style="border-top: 0.5px solid #dadce0;">
+                <button type="button" class="btn btn-danger mt-1">
+                    <i class="bi bi-trash"></i>
+                </button>
+                <div class="form-check form-switch mt-1 ms-3" style="font-size: 20px;">
+                    <input class="form-check-input" type="checkbox">
+                    <label class="form-check-label" for="switchDefault">mandatory</label>
+                </div>
+                <button type="button mt-1 ms-3" class="btn btn-light">
+                    <i class="bi bi-three-dots-vertical"></i>
+                </button>
+            </div>
+        </div>
+
+
+        <div class="div-class section">
+
+            <div class="align-items-center text-center">
+                <button type="button" class="btn btn-light">
+                    <i class="bi bi-arrow-down-up"></i>
+                </button>
+            </div>
+
+            <div class="align-items-center text-center">
+                <button type="button" class="btn btn-light">
+                    <i class="bi bi-arrow-down-up"></i>
+                </button>
+            </div>
+            <div class="row mt-1">
+                <div class="col-12">
+                    <div class="input-group">
+                        <textarea style="font-size: 24px; font-weight: bold;" class="form-control" >Question</textarea>
+                        <div class="input-group-append">
+                            <button type="button" class="btn btn-secondary ms-2">
+                                <i class="bi bi-card-image"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row mt-2">
+                <div class="col-12">
+                    <div class="input-group">
+                        <textarea type="text" class="form-control text-dark mt-3">description (optional)</textarea>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="row mt-4">
+                <div class="col-auto align-items-center d-flex">
+                    <span>1.</span>
+                    <div class="align-items-center text-center">
+                        <button type="button" class="btn btn-light">
+                            <i class="bi bi-arrow-down-up"></i>
+                        </button>
+                    </div>
+                </div>
+                <div class="col">
+                    <input type="text" class="form-control" placeholder="option 0">
+                </div>
+                <div class="col-auto">
+                    <button type="button" class="btn btn-secondary">
+                        <i class="bi bi-card-image"></i>
+                    </button>
+                    <button type="button" class="btn btn-danger ms-2">
+                    <i class="bi bi-x"></i>
+                    </button>
+                </div>
+            </div>
+            <div class="row mt-4">
+                <div class="col-auto align-items-center d-flex">
+                    <span>2.</span>
+                    <div class="align-items-center text-center">
+                        <button type="button" class="btn btn-light">
+                            <i class="bi bi-arrow-down-up"></i>
+                        </button>
+                    </div>
+                </div>
+                <div class="col">
+                    <input type="text" class="form-control" placeholder="option 1">
+                </div>
+                <div class="col-auto">
+                    <button type="button" class="btn btn-secondary">
+                        <i class="bi bi-card-image"></i>
+                    </button>
+                    <button type="button" class="btn btn-danger ms-2">
+                    <i class="bi bi-x"></i>
+                    </button>
+                </div>
+            </div>
+
+            <div class="row mt-4">
+                <div class="col-auto align-items-center d-flex">
+                    <span>3.</span>
+                    <div class="align-items-center text-center">
+                        <button type="button" class="btn btn-light">
+                            <i class="bi bi-arrow-down-up"></i>
+                        </button>
+                    </div>
+                </div>
+                <div class="col">
+                    <input type="text" class="form-control" placeholder="option 3">
+                </div>
+                <div class="col-auto">
+                    <button type="button" class="btn btn-secondary">
+                        <i class="bi bi-card-image"></i>
+                    </button>
+                    <button type="button" class="btn btn-danger ms-2">
+                    <i class="bi bi-x"></i>
+                    </button>
+                </div>
+            </div>
+
+            <div class="row mt-4">
+                <div class="col">
+                    <input type="text" class="form-control" placeholder="add option">
+                </div>
+            </div>
+
+
+
+
+            <div class="justify-content-end d-flex mt-4 align-items-center" style="border-top: 0.5px solid #dadce0;">
+                <button type="button" class="btn btn-danger mt-1">
+                    <i class="bi bi-trash"></i>
+                </button>
+                <div class="form-check form-switch mt-1 ms-3" style="font-size: 20px;">
+                    <input class="form-check-input" type="checkbox">
+                    <label class="form-check-label" for="switchDefault">mandatory</label>
+                </div>
+                <button type="button mt-1 ms-3" class="btn btn-light">
+                    <i class="bi bi-three-dots-vertical"></i>
+                </button>
+            </div>
+        </div>
+
+        <div class="div-class section">
+            <div class="row">
+                <div class="col-12">
+                        <input style="font-size: 24px; font-weight: bold;" class="form-control" placeholder="add" ></input>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="d-flex justify-content-center align-items-center mb-3">
+        <button class="btn btn-primary btn-lg">Finish</button>
+    </div>
+</body>
