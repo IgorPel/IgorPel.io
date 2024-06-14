@@ -1,6 +1,3 @@
-import Survey from "../model/Survey.js";
-import question from "../model/Question.js";
-import Profile from "../model/profile.js";
 
 export default class Controller {
     constructor(SurveyListModel, SurveyListView) {
@@ -22,65 +19,10 @@ export default class Controller {
         }
     }
     
-    
-    
-    
     InitPublic()
     {
         this.main = "main";
         this.SurveyListModel.setOnChangeCallback((e) => this.onChangeCallback(e));
-        let quest0 = new question(0, 0);
-        
-        let som = new Survey('som0');
-        som.responsible = 1;
-        som.addQuest(quest0);
-        som.date = new Date(2001, 12, 15);
-        this.SurveyListModel.add(som);
-
-        som = new Survey('som1');
-        som.responsible = 3;
-        som.addQuest(quest0);
-        som.addQuest(quest0);
-        som.addQuest(quest0);
-        som.date = new Date(2003, 12, 15);
-        this.SurveyListModel.add(som);
-
-
-        som = new Survey('som2');
-        som.responsible = 4;
-        som.addQuest(quest0);
-        som.addQuest(quest0);
-        som.addQuest(quest0);
-        som.addQuest(quest0);
-        som.date = new Date(2004, 12, 15);
-        this.SurveyListModel.add(som);
-
-
-        som = new Survey('som3');
-        som.responsible = 6;
-        som.addQuest(quest0);
-        som.addQuest(quest0);
-        som.addQuest(quest0);
-        som.addQuest(quest0);
-        som.addQuest(quest0);
-        som.addQuest(quest0);
-        som.date = new Date(2006, 12, 15);
-        this.SurveyListModel.add(som);
-
-
-        som = new Survey('som4');
-        som.responsible = 8;
-        som.addQuest(quest0);
-        som.addQuest(quest0);
-        som.addQuest(quest0);
-        som.addQuest(quest0);
-        som.addQuest(quest0);
-        som.addQuest(quest0);
-        som.addQuest(quest0);
-        som.addQuest(quest0);
-        som.date = new Date(2008, 12, 15);
-        this.SurveyListModel.add(som);
-        
         this.SearchInput = 'SearchText';
         document.querySelector('#SearchBtn').addEventListener('click', ()=>this.searchSurvey());
         document.querySelector('#SearchClean').addEventListener('click', ()=>this.SurveyListModel.showSurveys());
@@ -91,10 +33,6 @@ export default class Controller {
         document.querySelector('#filter_complete').addEventListener('click', ()=>this.filter());
     }
    
-
-    
-
-    
     filter()
     {
         let data = [];
@@ -119,11 +57,6 @@ export default class Controller {
         this.SurveyListModel.filter(data);
         this.onChangeCallback();
     }
-
-    
-
-    
-
 
     searchSurvey(){ 
         const res = this.SurveyListView.GetElement(this.SearchInput).value;
@@ -201,60 +134,94 @@ export default class Controller {
     addSurvey() {
         const title = document.getElementById('add_survey_index').value;
         this.SurveyListView.clean('add_survey_index');
-        const survey = new Survey(title);
-        this.SurveyListModel.add(survey);
+        this.SurveyListModel.add(title);
         this.SurveyListView.hideModal('add_new');
     }
 
     delSurvey(id) { 
         this.SurveyListModel.delete(id);
     }
-
-
-    list(data)
-    {
-        let message = '';
-        for (let i = 0; i < data.length && i < 4; i++) {
-            message += `${data[i]}, `;
-        }
-        if(data.length === 5){
-            message += `${data[5]}`;
-        } else if(data.length > 5) {
-            message += '...';
-        } else {
-            message = message.slice(0, -2);
-        }
-        return message;
-    }
   
 
     finish()
     {
+
+        function list(data)
+        {
+            let message = '';
+            for (let i = 0; i < data.length && i < 4; i++) {
+                message += `${data[i]}, `;
+            }
+            if(data.length === 5){
+                message += `${data[5]}`;
+            } else if(data.length > 5) {
+                message += '...';
+            } else {
+                message = message.slice(0, -2);
+            }
+            return message;
+        }
+        
+        function add_end(message, data){
+            if(data.length <= 3){
+                message = message.slice(0, -4);
+            } else {
+                message += '...'
+            }
+            return message;
+        }
         this.SaveData();
         let message = '';
         const cheacked_name = this.SurveyListModel.CheakAllnames();
         const cheacked_options = this.SurveyListModel.CheakAllOptions();
+        const cheacked_value = this.SurveyListModel.cheackNun();
+        const cheacked_min_max = this.SurveyListModel.CheackMinMax();
+        const cheacked_identicalQuest = this.SurveyListModel.CheackIdenticalQuestions();
+        const cheacked_identicalOpt = this.SurveyListModel.CheackIdenticalOption();
         if(this.SurveyListModel.surveys[0].quests.length === 0){
            this.SurveyListView.showError('You have at least one question to ask');
         } else if(this.SurveyListView.GetElement('name_survey').value === ''){
             this.SurveyListView.showError('You need to name the survey');
         } else if(cheacked_name.length !== 0){
             let message = 'In question ';
-            message += this.list(cheacked_name);
+            message += list(cheacked_name);
             this.SurveyListView.showError(message + ' do not have a name');
         } else if(cheacked_options.length !== 0) {
-              
             for(let i = 0; i < cheacked_options.length && i < 3; i++) {
                 message += 'in question ' + cheacked_options[i][0]  + ' options ';
-                message += this.list(cheacked_options[i][1]) + ' and ';
+                message += list(cheacked_options[i][1]) + ' and ';
             }
-            if(cheacked_options.length <= 3){
-                message = message.slice(0, -4);
-            } else {
-                message += '...'
-            }
+            message = add_end(message, cheacked_options);
             this.SurveyListView.showError(message + ' nothing is written');
-        } else {
+        } else if(cheacked_value.length !== 0) {
+            for(let i = 0; i < cheacked_value.length && i < 3; i++) {
+                message += ' in question ' + cheacked_value[i][0]  + ' options: ';
+                message += cheacked_value[i][1][0] + ' is not number and ';
+                if(cheacked_value[i][1].length != 1){
+                    message += cheacked_value[i][1][1] + ' is not number and ';
+                }
+            }
+            message = add_end(message, cheacked_value);
+            this.SurveyListView.showError(message);
+        } else if(cheacked_min_max.length !== 0) {
+            for(let i = 0; i < cheacked_min_max.length && i < 3; i++) {
+                message += 'in question ' + cheacked_min_max[i]  + ' minimun more than maximum and';
+            }
+            message = add_end(message, cheacked_min_max);
+            this.SurveyListView.showError(message);
+        } else if(cheacked_identicalOpt.length !== 0) {
+            message = 'In question ';
+            message += list(cheacked_identicalOpt);
+            message += ' have identical options';
+            this.SurveyListView.showError(message );
+        } else if(cheacked_identicalQuest.length !== 0) {
+            for(let i = 0; i < cheacked_identicalQuest.length && i < 3; i++) {
+                message += ` question ${cheacked_identicalQuest[i][0]} have same name with ${cheacked_identicalQuest[i][1]} and `;
+            }
+            message = add_end(message, cheacked_identicalQuest);
+            this.SurveyListView.showError(message);
+        }
+        else {
             const name = this.SurveyListView.GetElement('name_survey').value;
             const description = this.SurveyListView.GetElement('description_survey').value;
             this.SurveyListModel.setInfo(name, description);
@@ -270,9 +237,9 @@ export default class Controller {
         document.querySelector('#add_new_btn').addEventListener('click', ()=>this.addQuestion());
         document.querySelector('#main').addEventListener('click', (e) => this.onClickW(e)); 
         this.type = 0;
+        this.SurveyListView.setSave(this.SaveData);
         this.SurveyListModel.setOnChangeCallback((e) => this.onChangeCallback(e));
-        const survey = new Survey('som1');
-        this.SurveyListModel.add(survey);
+        this.SurveyListModel.add('example');
         document.getElementById('radioGroup').addEventListener('change', (e) => 
         {
             if(e.target.type === 'radio'){
@@ -297,7 +264,7 @@ export default class Controller {
         } else if(e.target.hasAttribute('data-deleteQuestion')) {
             this.SaveData();
             this.deleteOP = false;
-            this.SurveyListModel.deleteQuest(e.target.dataset.deleteQuestion);
+            this.SurveyListModel.deleteQuest(e.target.dataset.deletequestion);
             this.onChangeCallback();
             this.deleteOP = true;
         } 
@@ -320,13 +287,9 @@ export default class Controller {
         
     }
 
-
-   
-
     addQuestion()
     {
-        const quest = new question(this.type, this.SurveyListModel.GetLastId() + 1);
-        this.SurveyListModel.addQuest(quest);
+        this.SurveyListModel.addQuest(this.type);
         this.SurveyListView.hideModal('add_new');
         this.onChangeCallback();
     }
@@ -398,9 +361,8 @@ export default class Controller {
     {
         this.SurveyListModel.setOnChangeCallback((e) => this.onChangeCallback(e));
 
-        const profile = new Profile();
         this.main = 'my_surveys';
-        this.SurveyListModel.setPerson(profile);
+        this.SurveyListModel.setPerson();
 
         let data = this.SurveyListModel.GetProfileInfo();
         let tags = ['nickname', 'name', 'surname', 'email', 'birthday', 'country', 'language'];
@@ -488,6 +450,7 @@ export default class Controller {
             this.SurveyListView.HideShow('ChangeAbout', 'none');
             this.edit = true;
         }
+
     }
 
     ChangeMain()
@@ -509,6 +472,10 @@ export default class Controller {
 
             this.SurveyListModel.SetProfileInfo(data); 
             this.SurveyListView.ShowProfile(data);
+            let input = ['nickname_input', 'name_input', 'surname_input', 'email_input', 'birthday_input', 'country_input', 'language_input'];
+            input.forEach((tag) => {
+                this.SurveyListView.clean(tag);
+            })
             this.edit = true;
         }
     }

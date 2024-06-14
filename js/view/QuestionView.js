@@ -19,7 +19,16 @@ export default class QuestionView {
                     </div>
                 </div>
             </div>`
-            
+        this.end = ` <div class="justify-content-end d-flex mt-4 align-items-center" style="border-top: 0.5px solid #dadce0;">
+                        <button data-deleteQuestion="${this.QuestionModel.id}" type="button" class="btn btn-danger mt-1">
+                            <i data-deleteQuestion="${this.QuestionModel.id}" class="bi bi-trash"></i>
+                        </button>
+                        <div class="form-check form-switch mt-1 ms-3" style="font-size: 20px;">
+                            <input data-mandatory="${this.QuestionModel.id}" class="form-check-input" type="checkbox">
+                            <label class="form-check-label" for="switchDefault">mandatory</label>
+                        </div>
+                    </div>
+                </div>`
     }
 
  
@@ -60,19 +69,8 @@ export default class QuestionView {
                     <button data-add="${this.QuestionModel.id}" type="button" class="btn btn-primary">
                         Add new question
                     </button> 
-                </div>
-                
-
-                <div class="justify-content-end d-flex mt-4 align-items-center" style="border-top: 0.5px solid #dadce0;">
-                    <button data-deleteQuestion="${this.QuestionModel.id}" type="button" class="btn btn-danger mt-1">
-                        <i data-deleteQuestion="${this.QuestionModel.id}" class="bi bi-trash"></i>
-                    </button>
-                    <div class="form-check form-switch mt-1 ms-3" style="font-size: 20px;">
-                        <input data-mandatory="${this.QuestionModel.id}" class="form-check-input" type="checkbox">
-                        <label class="form-check-label" for="switchDefault">mandatory</label>
-                    </div>
-                </div>
-            </div>`
+                </div>`
+        res += this.end;
         return res;
        
     }
@@ -103,18 +101,9 @@ export default class QuestionView {
                         Add new question
                     </button> 
                 </div>
-                
-
-                <div class="justify-content-end d-flex mt-4 align-items-center" style="border-top: 0.5px solid #dadce0;">
-                    <button data-deleteQuestion="${this.QuestionModel.id}" type="button" class="btn btn-danger mt-1">
-                        <i data-deleteQuestion="${this.QuestionModel.id}" class="bi bi-trash"></i>
-                    </button>
-                    <div class="form-check form-switch mt-1 ms-3" style="font-size: 20px;">
-                        <input class="form-check-input" type="checkbox">
-                        <label class="form-check-label" for="switchDefault">mandatory</label>
-                    </div>
-                </div>
-            </div>`
+        `
+        
+        res += this.end;
         return res;
     }
 
@@ -138,16 +127,7 @@ export default class QuestionView {
             <input type="range" class="form-range" disabled>
         </div>
         ` 
-        res += `<div class="justify-content-end d-flex mt-4 align-items-center" style="border-top: 0.5px solid #dadce0;">
-            <button data-deleteQuestion="${this.QuestionModel.id}" type="button" class="btn btn-danger mt-1">
-                <i data-deleteQuestion="${this.QuestionModel.id}" class="bi bi-trash"></i>
-            </button>
-            <div class="form-check form-switch mt-1 ms-3" style="font-size: 20px;">
-                <input class="form-check-input" type="checkbox">
-                <label class="form-check-label" for="switchDefault">mandatory</label>
-            </div>
-            </div>
-            </div>`
+        res += this.end;
         return res;
     }
 
@@ -162,17 +142,8 @@ export default class QuestionView {
                     </div>
                 </div>
             </div>
-
-            <div class="justify-content-end d-flex mt-4 align-items-center" style="border-top: 0.5px solid #dadce0;">
-                <button type="button" class="btn btn-danger mt-1">
-                    <i class="bi bi-trash"></i>
-                </button>
-                <div class="form-check form-switch mt-1 ms-3" style="font-size: 20px;">
-                    <input class="form-check-input" type="checkbox">
-                    <label class="form-check-label" for="switchDefault">mandatory</label>
-                </div>
-            </div>
-        </div>`
+            `
+        res += this.end;
         return res;
     }
 

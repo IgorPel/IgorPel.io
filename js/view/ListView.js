@@ -25,10 +25,17 @@ export default class SurveyListView {
         const modalElement = document.getElementById('add_new');
         this.modalInstance = new bootstrap.Modal(modalElement);
         this.toHtml = this.toHhmlWorkplace;
+        this.save = null;
+    }
+
+    setSave(save)
+    {
+        this.save = save; 
     }
 
     toHhmlWorkplace()
     {
+        this.save();
         if(this.SurveyListModel.surveys.length === 0)
         {
             return ""; 

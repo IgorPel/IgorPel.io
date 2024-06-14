@@ -1,3 +1,7 @@
+import Survey from "../model/Survey.js";
+import question from "../model/Question.js";
+import Profile from "../model/profile.js";
+
 
 export default class ListModel {
     constructor() {
@@ -8,6 +12,7 @@ export default class ListModel {
             this.person = null;
         }
     }
+
 
     SaveData(data, names, descriptions)
     {
@@ -51,14 +56,15 @@ export default class ListModel {
         return empty;
     }
 
-    setPerson(person)
+    setPerson()
     {
-        this.person = person;
+        this.person = new Profile();
     }
 
-    add(Survey) {
-        Survey.onChangeCallback = this.onChangeCallback;
-        this.surveys.push(Survey);
+    add(title) {
+        let survey =  new Survey(title);
+        survey.onChangeCallback = this.onChangeCallback;
+        this.surveys.push(survey);
     }
   
     delete(SurveyID) {
@@ -139,9 +145,73 @@ export default class ListModel {
         }
     }
 
-    addQuest(Quest)
+    CheackIdenticalQuestions()
     {
-        this.surveys[0].addQuest(Quest);
+        let error = [];
+        let names = []
+        this.surveys[0].quests.forEach((quest, i) => {
+            if(names.indexOf(quest.question) !== -1) {
+                error.push([names.indexOf(quest.question), i]);
+            } else {
+                names.push(quest.question);
+            }
+        })
+        return error;
+    }
+
+    CheackIdenticalOption()
+    {
+        let error = [];
+        this.surveys[0].quests.forEach((quest, i) => 
+        {
+            let uniqueElements  = new Set(quest.options);
+            if(uniqueElements.size !== quest.options.length) {
+                error.push(i);
+            }
+        })
+        return error;
+    }
+
+    CheackMinMax()
+    {
+        let error = [];
+        this.surveys[0].quests.forEach((quest, i) =>{
+            if(quest.type === 2)
+            {
+                if(parseFloat(quest.options[0]) > parseFloat(quest.options[1])){
+                    error.push(i);
+                }
+            }
+        })
+        return error;
+    }
+
+    cheackNun()
+    {
+        let error = [];
+        this.surveys[0].quests.forEach((quest, i) =>{
+            if(quest.type === 2)
+            {
+                error.push([i, []]);
+                if(isNaN(quest.options[0])){
+                    error[error.length - 1][1].push(quest.options[0]);
+                }
+                if(isNaN(quest.options[1])){
+                    error[error.length - 1][1].push(quest.options[1]);
+                }
+
+                if(error[error.length - 1][1].length === 0){
+                    error.pop();
+                }
+            }
+        })
+        return error;
+    }
+
+    addQuest(type)
+    {
+        const quest = new question(type, this.GetLastId() + 1);
+        this.surveys[0].addQuest(quest);
     }
 
     deleteQuest(id)
@@ -150,8 +220,6 @@ export default class ListModel {
          for(let i = id; i < this.surveys[0].quests.length; i++) {
             this.surveys[0].quests[i].id--;
         }
-        /*
-        */
     }
 
     addOPtion(id)
@@ -207,8 +275,6 @@ export default class ListModel {
         }
         
     }
-
-    
 
     setInfo(name, desc)
     {
